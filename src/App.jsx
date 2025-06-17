@@ -18,6 +18,7 @@ import GrafismoView from "./pages/GrafismoView";
 import AritmeticaView from "./pages/AritmeticaView";
 import GeometriaView from "./pages/GeometricaView";
 import { darkTheme, lightTheme } from "./theme";
+import QuizView from "./pages/QuizView";
 
 const tabs = ["Início", "Grafismos", "Aritmética", "Geometria", "Quizz"];
 
@@ -81,7 +82,7 @@ export default function App() {
           {activeTab === "Grafismos" && <GrafismoView fontSize={fontSize} />}
           {activeTab === "Aritmética" && <AritmeticaView fontSize={fontSize} />}
           {activeTab === "Geometria" && <GeometriaView fontSize={fontSize} />}
-          {activeTab === "Quizz" && <div>Conteúdo de Quizz aqui</div>}
+          {activeTab === "Quizz" && <QuizView fontSize={fontSize}/>}
         </Content>
       </Container>
     </ThemeProvider>
