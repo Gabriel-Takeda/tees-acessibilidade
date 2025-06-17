@@ -1,8 +1,6 @@
-// styles/styles.ts
-import styled from "styled-components";
-import React from "react"; // nao apaga essa perda
 
-// Container de conteúdo: centraliza itens
+import styled from "styled-components";
+
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
@@ -12,7 +10,6 @@ export const Content = styled.div`
   width: 100%;
 `;
 
-// Wrapper para imagem e texto lado a lado, ocupando toda a largura
 export const StartViewWrapper = styled.div`
   display: flex;
   flex-direction: row;
