@@ -1,7 +1,15 @@
-import styled from "styled-components";
 import { Button, Divider, Space } from "antd";
+import styled from "styled-components";
 
-/* 1. Skip link - só aparece ao focar */
+declare module "styled-components" {
+  export interface DefaultTheme {
+    background: string;
+    text: string;
+    primary: string;
+    secondary: string;
+  }
+}
+
 export const SkipLink = styled.a`
   position: absolute;
   left: 1rem;
@@ -20,16 +28,18 @@ export const SkipLink = styled.a`
 `;
 
 /* Container / título / divider */
-
 export const Container = styled.div`
   text-align: center;
   padding: 40px 0;
   background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.text};
   min-height: 100vh;
+
+  @media (max-width: 768px) {
+    padding: 24px 0;
+  }
 `;
 
-// Wrapper do título + seletor de tema
 export const TitleBar = styled.div`
   display: flex;
   justify-content: space-between;
@@ -37,11 +47,22 @@ export const TitleBar = styled.div`
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 24px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 16px;
+  }
 `;
 
 export const Title = styled.h1`
   margin-bottom: 16px;
   color: ${({ theme }) => theme.text};
+  font-size: 2.4rem;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 
 export const ThemeSelector = styled.div`
@@ -60,12 +81,19 @@ export const ThickDivider = styled(Divider)`
 /* Grupo de botões */
 export const ButtonGroup = styled(Space)`
   margin-top: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    gap: 8px;
+  }
 `;
 
-export const MenuButton = styled(Button) <{ $active?: boolean }>`
+export const MenuButton = styled(Button)<{ $active?: boolean }>`
   && {
     background: ${({ $active, theme }) =>
-    $active ? theme.background : theme.primary};
+      $active ? theme.background : theme.primary};
     color: ${({ $active, theme }) => ($active ? theme.primary : theme.text)};
     border: 2px solid ${({ theme }) => theme.primary};
     border-radius: 20px;
@@ -85,6 +113,11 @@ export const MenuButton = styled(Button) <{ $active?: boolean }>`
       outline: 3px dashed ${({ theme }) => theme.secondary};
       outline-offset: 4px;
     }
+
+    @media (max-width: 768px) {
+      width: 100%;
+      max-width: 300px;
+    }
   }
 `;
 
@@ -96,4 +129,9 @@ export const Content = styled.div`
   margin-top: 32px;
   width: 100%;
   padding: 0 16px;
+
+  @media (max-width: 768px) {
+    margin-top: 24px;
+    padding: 0 12px;
+  }
 `;

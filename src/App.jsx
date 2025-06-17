@@ -1,24 +1,24 @@
-import React, { useState } from "react";
-import { ThemeProvider } from "styled-components";
 import { Select } from "antd";
+import { useState } from "react";
+import { ThemeProvider } from "styled-components";
 import {
+  ButtonGroup,
   Container,
-  Title,
-  TitleBar,
+  Content,
+  MenuButton,
+  SkipLink,
   ThemeSelector,
   ThickDivider,
-  ButtonGroup,
-  MenuButton,
-  Content,
-  SkipLink,
+  Title,
+  TitleBar,
 } from "./styles/styles";
 
-import StartView from "./pages/startView";
-import GrafismoView from "./pages/GrafismoView";
 import AritmeticaView from "./pages/AritmeticaView";
 import GeometriaView from "./pages/GeometricaView";
-import { darkTheme, lightTheme } from "./theme";
+import GrafismoView from "./pages/GrafismoView";
 import QuizView from "./pages/QuizView";
+import StartView from "./pages/StartView";
+import { darkTheme, lightTheme } from "./theme";
 
 const tabs = ["Início", "Grafismos", "Aritmética", "Geometria", "Quizz"];
 

@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     font-size: 62.5%; 
   }
+
   body {
     font-family: 'Lora', serif;    
     background-color: #ffffff;
@@ -30,15 +31,18 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: inherit;
   }
+
   ul {
     list-style: none;
   }
+
   button {
     border: none;
     background: none;
     cursor: pointer;
     font: inherit;
   }
+
   img {
     display: block;
     max-width: 100%;
@@ -47,9 +51,26 @@ const GlobalStyle = createGlobalStyle`
   ::-webkit-scrollbar {
     width: 8px;
   }
+
   ::-webkit-scrollbar-thumb {
     background-color: var(--secondary);
     border-radius: 4px;
+  }
+
+  /* Media query para telas menores */
+  @media (max-width: 768px) {
+    html {
+      font-size: 55%; /* Reduz um pouco a base da tipografia */
+    }
+
+    body {
+      padding: 1rem; /* Adiciona um pequeno padding ao corpo para não colar nas bordas */
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
   }
 `;
 

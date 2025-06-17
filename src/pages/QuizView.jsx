@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const Container = styled.section`
@@ -19,8 +18,9 @@ const FormButton = styled.a`
   display: inline-block;
   padding: 1rem 2rem;
   font-size: 1.5rem;
-  background-color: #007bff;
+  background-color: rgb(245, 124, 0);
   color: #fff;
+  font-weight: bold;
   border-radius: 8px;
   text-decoration: none;
   text-align: center;
@@ -29,8 +29,8 @@ const FormButton = styled.a`
 
   &:hover,
   &:focus {
-    background-color: #0056b3;
-    outline: 3px solid #0056b3;
+    background-color: rgb(208, 104, 0);
+    outline: 3px solid rgb(245, 124, 0);
     outline-offset: 2px;
   }
 `;
